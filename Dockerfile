@@ -28,7 +28,7 @@ RUN apt-get update -y && \
     python3-psycopg2 python3-pip \
     python3-venv python3-dev \
     python3-apt postgresql libpq-dev \
-    redis-server systemctl git --no-install-recommends
+    redis-server systemctl git gcc --no-install-recommends
 
 # hadolint ignore=DL3013
 RUN pip3 install --no-cache-dir pip --upgrade && \
