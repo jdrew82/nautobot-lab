@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+ARG ARCH=
+FROM ${ARCH}ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -28,7 +29,7 @@ RUN apt-get update -y && \
     python3-psycopg2 python3-pip \
     python3-venv python3-dev \
     python3-apt postgresql libpq-dev \
-    redis-server systemctl git gcc --no-install-recommends
+    redis-server systemctl git gcc
 
 # hadolint ignore=DL3013
 RUN pip3 install --no-cache-dir pip --upgrade && \
